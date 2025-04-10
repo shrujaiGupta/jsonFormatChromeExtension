@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "JSON Formatter Shortcut",
+    "version": "1.0",
+    "permissions": [
+      "contextMenus",
+      "scripting",
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://jsonformatter.org/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://jsonformatter.org/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_title": "JSON Formatter"
+    }
+  }
+  
